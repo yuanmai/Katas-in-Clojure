@@ -4,6 +4,7 @@
 
 This is an implementation of the Uncle Bob's [bowling scorer](http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata) in Clojure.
 In this kata, I demonstrated:
+
 * How to use symbols to improve expressiveness in tests
 * An easy way to test recursive functions
 
