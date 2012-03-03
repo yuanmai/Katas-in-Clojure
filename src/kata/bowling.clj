@@ -1,10 +1,14 @@
 (ns kata.bowling)
 
+(defn- sumn
+  [n coll]
+  (reduce + (flatten (take n coll))))
+
 (defn frames
   ([rolls] (frames rolls frames))
   ([rolls f]
      (let [[frame frame-and-bonuses]
-           (condp #(= 10 (apply + (take %1 %2))) rolls
+           (condp #(= 10 (sumn %1 %2)) rolls
              1 [1 3]
              2 [2 3]
              [2 2])]
@@ -16,4 +20,4 @@
 
 (defn score
   [game]
-  (reduce + (flatten (take 10 (frames game)))))
+  (sumn 10 (frames game)))
