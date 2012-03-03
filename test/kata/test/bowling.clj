@@ -10,6 +10,6 @@
 
 (deftest test-frame-advance
   (are [desciption advance rolls] (= advance (second (frames rolls list)))
-       "strike"     '(x y) '(10 x y z)
-       "spare"      '(x)   '( 5 5 x y)
-       "open frame" '(x)   '( 5 4 x)))
+       "strike"     '(x y z) '(10 x y z)
+       "spare"      '(x y)   '( 5 5 x y)
+       "open frame" '(x)     '( 5 4 x)))
