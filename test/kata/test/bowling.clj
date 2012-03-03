@@ -2,5 +2,8 @@
   (:use [kata.bowling])
   (:use [clojure.test]))
 
-(deftest replace-me ;; FIXME: write
-  (is false "No tests have been written."))
+(deftest test-frame-and-bonuses
+  (are [description frame-and-bonuses rolls] (= frame-and-bonuses (frames rolls))
+       "strike"     '(10 x y) '(10 x y z)
+       "spare"      '( 5 5 x) '( 5 5 x)
+       "open frame" '( 5 4)   '( 5 4 x)))
