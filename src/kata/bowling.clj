@@ -12,9 +12,7 @@
              1 [1 3]
              2 [2 3]
              [2 2])]
-       (cons (take
-              frame-and-bonuses
-              rolls)
+       (cons (take frame-and-bonuses rolls)
              (lazy-seq
                (f (drop frame rolls)))))))
 
