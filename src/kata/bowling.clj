@@ -16,4 +16,4 @@
 
 (defn score
   [game]
-  0)
+  (reduce + (flatten (take 10 (frames game)))))
