@@ -1,7 +1,9 @@
 (ns kata.bowling)
 
 (defn frames [rolls]
-  (cond
-    (= 10 (first rolls)) '(10 x y)
-    (= 10 (apply + (take 2 rolls))) '(5 5 x)
-    :else '(5 4)))
+  (take
+   (cond
+     (= 10 (apply + (take 1 rolls))) 3
+     (= 10 (apply + (take 2 rolls))) 3
+     :else 2)
+   rolls))
