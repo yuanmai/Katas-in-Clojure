@@ -20,3 +20,10 @@
        "perfect game" [10 10 10] (repeat 12 10)
        "all spares" [5 5 5] (repeat 21 5)
        "all ones" [1 1] (repeat 21 1)))
+
+(deftest test-score
+  (are [description expected-score game] (= expected-score (score game))
+       "gutter game" 0 (repeat 0)
+       "perfect game" 300 (repeat 12 10)
+       "all spares" 150 (repeat 21 5)
+       "all ones" 20 (repeat 21 1)))

@@ -13,3 +13,7 @@
               rolls)
              (lazy-seq
                (f (drop frame rolls)))))))
+
+(defn score
+  [game]
+  0)
