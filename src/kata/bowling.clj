@@ -2,8 +2,8 @@
 
 (defn frames [rolls]
   (take
-   (cond
-     (= 10 (apply + (take 1 rolls))) 3
-     (= 10 (apply + (take 2 rolls))) 3
-     :else 2)
+   (condp #(= 10 (apply + (take %1 %2))) rolls
+     1 3
+     2 3
+     2)
    rolls))
