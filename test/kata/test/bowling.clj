@@ -4,15 +4,15 @@
 
 (deftest test-frame-and-bonuses
   (are [description frame-and-bonuses rolls] (= frame-and-bonuses (first (frames rolls)))
-       "strike"     '(10 x y) '(10 x y z)
-       "spare"      '( 5 5 x) '( 5 5 x y)
-       "open frame" '( 5 4)   '( 5 4 x)))
+       "strike"     '(10 x y) '(10 x y ...)
+       "spare"      '( 5 5 x) '( 5 5 x ...)
+       "open frame" '( 5 4)   '( 5 4 ...)))
 
 (deftest test-frame-advance
-  (are [desciption advance rolls] (= advance (second (frames rolls list)))
-       "strike"     '(x y z) '(10 x y z)
-       "spare"      '(x y)   '( 5 5 x y)
-       "open frame" '(x)     '( 5 4 x)))
+  (are [desciption rolls] (= '(x ...) (second (frames rolls list)))
+       "strike"     '(10 x ...)
+       "spare"      '( 5 5 x ...)
+       "open frame" '( 5 4 x ...)))
 
 (deftest test-frames-for-competed-games
   (are [description each-frame game] (= (repeat 10 each-frame)  (take 10 (frames game)))
