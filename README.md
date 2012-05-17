@@ -1,5 +1,7 @@
 # Clojure Katas
 
+[![Build Status](https://secure.travis-ci.org/yuanmai/Katas-in-Clojure.png?branch=master)](http://travis-ci.org/yuanmai/Katas-in-Clojure)
+
 ## Bowling Game Score
 
 This is an implementation of the Uncle Bob's [bowling scorer](http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata) in Clojure.
