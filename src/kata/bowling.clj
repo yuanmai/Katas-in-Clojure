@@ -7,12 +7,12 @@
 (defn frames
   ([rolls] (frames rolls frames))
   ([rolls f]
-     (let [[frame frame-and-bonuses]
+     (let [[frame bonus]
            (condp #(= 10 (sumn %1 %2)) rolls
-             1 [1 3]
-             2 [2 3]
-             [2 2])]
-       (cons (take frame-and-bonuses rolls)
+             1 [1 2]
+             2 [2 1]
+               [2 0])]
+       (cons (take (+ frame bonus) rolls)
              (lazy-seq
                (f (drop frame rolls)))))))
 
